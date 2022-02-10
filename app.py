@@ -3,7 +3,7 @@ from flask import Flask,render_template,request,redirect
 from models import db,EmployeeModel
 
 app =Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db3.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db5.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db.init_app(app)
 
@@ -12,20 +12,74 @@ db.init_app(app)
 def create_table():
     db.create_all()
 
-@app.route('/data/create' , methods = ['GET','POST'])
-def create():
+@app.route('/data/add' , methods = ['GET','POST'])
+def add():
     if request.method == 'GET':
         return render_template('createpage.html')
- 
+
     if request.method == 'POST':
-        employee_id = request.form['employee_id']
-        name = request.form['name']
-        age = request.form['age']
-        position = request.form['position']
-        employee = EmployeeModel(employee_id=employee_id, name=name, age=age, position = position)
+        print (request)    
+        Employee_id = request.form['Employee_id']
+        First_name = request.form['First_name']
+        print(First_name)
+        Last_name = request.form['Last_name']
+        Screen_name = request.form['Screen_name']
+        Date_of_birth = request.form['Date_of_birth']
+        Gender = request.form['Gender']
+        Country = request.form['Country']
+        Email = request.form['Email']
+        Phone = request.form['Phone']
+        Password = request.form['Password']
+        Confirm_password = request.form['Confirm_password']
+        employee = EmployeeModel(Employee_id=Employee_id,First_name=First_name, Last_name=Last_name, Screen_name= Screen_name, Date_of_birth=Date_of_birth, Gender=Gender, Country=Country, Email=Email, Phone=Phone, Password=Password, Confirm_password=Confirm_password)
+        print (employee,"abcd")
         db.session.add(employee)
+        print ("xyz--")
         db.session.commit()
+        print ("success")
+        # return "data addedd"
         return redirect('/data')
+        # return render_template('createpage.html')
+
+# @app.route('/data/create' , methods = ['POST'])
+# def createds():
+#         print(request.form)
+    #     employee = EmployeeModel(First_name=)
+    #     print (employee,"abcd")
+    #     db.session.add(employee)
+    #     print ("xyz--")
+    #     db.session.commit()
+    #     print ("success")
+    #     return "data added"
+    #     return redirect('/data')
+    # if request.method == 'GET':
+    #     return render_template('createpage.html')
+ 
+    # if request.method == 'POST':
+    #     print ("abc")
+    #     print (request)
+
+        # Employee_id = request.form['employee_id']
+        # First_name = request.form['First_name']
+        # print(First_name)
+        # Last_name = request.form['Last_name']
+        # Screen_name = request.form['Screen_name']
+        # Date_of_birth = request.form['Date_of_birth']
+        # Gender = request.form['Gender']
+        # Country = request.form['Country']
+        # Email = request.form['Email']
+        # Phone = request.form['Phone']
+        # Password = request.form['Password']
+        # Confirm_password = request.form['Confirm_password']
+        # employee = EmployeeModel(Employee_id=Employee_id,First_name=First_name, Last_name=Last_name, Screen_name= Screen_name, Date_of_birth=Date_of_birth, Gender=Gender, Country=Country, Email=Email, Phone=Phone, Password=Password, Confirm_password=Confirm_password)
+        # # employee = EmployeeModel(First_name=First_name)
+        # print (employee,"abcd")
+        # db.session.add(employee)
+        # print ("xyz--")
+        # db.session.commit()
+        # print ("success")
+        # # return "data addedd"
+        # return redirect('/data')
 @app.route('/data')
 def RetrieveDataList():
     employees = EmployeeModel.query.all()
@@ -33,16 +87,23 @@ def RetrieveDataList():
 
 @app.route('/data/<int:id>/update',methods = ['GET','POST'])
 def update(id):
-    employee = EmployeeModel.query.filter_by(employee_id=id).first()
+    employee = EmployeeModel.query.filter_by(Employee_id=id).first()
     if request.method == 'POST':
         if employee:
             db.session.delete(employee)
             db.session.commit()
  
-            name = request.form['name']
-            age = request.form['age']
-            position = request.form['position']
-            employee = EmployeeModel(employee_id=id, name=name, age=age, position = position)
+            First_name = request.form['First_name']
+            Last_name = request.form['Last_name']
+            Screen_name = request.form['Screen_name']
+            Date_of_birth = request.form['Date_of_birth']
+            Gender = request.form['Gender']
+            Country = request.form['Country']
+            Email = request.form['Email']
+            Phone = request.form['Phone']
+            Password = request.form['Password']
+            Confirm_password = request.form['Confirm_password']
+            employee = EmployeeModel(Employee_id=id, First_name=First_name, Last_name=Last_name, Screen_name = Screen_name, Date_of_birth=Date_of_birth, Gender=Gender, Country=Country, Email=Email, Phone=Phone, Password=Password)
  
             db.session.add(employee)
             db.session.commit()

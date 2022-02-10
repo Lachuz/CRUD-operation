@@ -1,10 +1,4 @@
-<!-- <form action='' method = "POST">
-    <p>employee ID <input type = "integer" name = "employee_id" /></p>
-    <p>name <input type = "text" name = "name" /></p>
-    <p>age <input type = "integer" name = "age" /></p>
-    <p>position <input type = "text" name = "position" /></p>
-    <p><input type = "submit" value = "Submit" /></p>
-  </form> -->
+
 
   <!DOCTYPE html>
   <html lang="en">
@@ -21,69 +15,103 @@
        
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     
-        <title>Hello, world!</title>
+        <title>Employee Management System</title>
       </head>
 
-  <!-- <body> -->
-    <!-- <form action='' method = "POST">
-    <p>employee ID <input type = "integer" class="form-control" name = "employee_id" /></p>
-    <p>name <input type = "text" class="form-control" name = "name" /></p>
-    <p>age <input type = "integer"class="form-control" name = "age" /></p>
-    <p>position <input type = "text" class="form-control" name = "position" /></p>
-    <p><input type = "submit" value = "Submit" /></p>
-  </form> -->
-  <!-- </body> -->
       
   <body>
   <form action='' method = "POST">
-     
+    
+    <div class="row mb-4">
+      <div class="col">
+        <div class="form-outline">
+          <input type="text" id="form3Example1" class="form-control" name = "Employee_id"/>
+          <label class="form-label" for="form3Example1">Employee ID</label>
+       </div>
+    </div>
+
       <div class="row mb-4">
       <div class="col">
         <div class="form-outline">
-          <input type="text" id="form3Example1" class="form-control" name = "employee_id"/>
-          <label class="form-label" for="form3Example1">Employee ID</label>
+          <input type="text" id="form3Example1" class="form-control" name = "First_name"/>
+          <label class="form-label" for="form3Example1">First name</label>
        </div>
     </div>
       <div class="col">
         <div class="form-outline">
-          <input type="text" id="form3Example2" class="form-control" name = "name" />
-          <label class="form-label" for="form3Example2">Employee Name</label>
+          <input type="text" id="form3Example2" class="form-control" name = "Last_name" />
+          <label class="form-label" for="form3Example2">Last name</label>
         </div>
       </div>
     </div>
+
+    <div class="col">
+      <div class="form-outline">
+        <input type="text" id="form3Example2" class="form-control" name = "Screen_name" />
+        <label class="form-label" for="form3Example2">Screen name</label>
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-4">
+      <div class="col">
+        <div class="form-outline">
+          <input type="text" id="form3Example1" class="form-control" name = "Date_of_birth"/>
+          <label class="form-label" for="form3Example1">Date of birth</label>
+  </div>
+
+  <div class="row mb-4">
+          <div class="col">
+          <div class="form-outline">
+          <input type="text" id="form3Example1" class="form-control" name = "Gender"/>
+          <label class="form-label" for="form3Example1">Gender</label>
+  </div>     
+
+ 
+ 
+  <div class="row mb-4">
+      <div class="col">
+        <div class="form-outline">
+          <input type="text" id="form3Example1" class="form-control" name = "Country"/>
+          <label class="form-label" for="form3Example1">Country</label>
+        </div>
+  </div>
+  <div class="col">
+        <div class="form-outline">
+          <input type="text" id="form3Example2" class="form-control" name = "Email" />
+          <label class="form-label" for="form3Example2">Email</label>
+        </div>
+      </div>
+  </div>
+  <div class="row mb-4">
+      <div class="col">
+        <div class="form-outline">
+          <input type="text" id="form3Example1" class="form-control" name = "Phone"/>
+          <label class="form-label" for="form3Example1">Phone</label>
+  </div>
+
+  <div class="row mb-4">
+      <div class="col">
+          <div class="form-outline">
+          <input type="password" id="form3Example1" class="form-control" name = "Password"/>
+          <label class="form-label" for="form3Example1">Password</label>
+  </div>
+
+  <div class="row mb-4">
+      <div class="col">
+          <div class="form-outline">
+          <input type="password" id="form3Example1" class="form-control" name = "Confirm_password"/>
+          <label class="form-label" for="form3Example1">Confirm password</label>
+  </div>
+
   
    
-    <!-- <div class="form-outline mb-4">
-      <input type="text" id="form3Example3" class="form-control" name = "age" />
-      <label class="form-label" for="form3Example3">Age</label>
-    </div>
-    </div>
-  
-    <div class="col">
-    <div class="form-outline">
-      <input type="text" id="form3Example4" class="form-control" name = "position" />
-      <label class="form-label" for="form3Example4">Position</label>
-    </div>
-    </div> -->
-
-    <div class="row mb-4">
-        <div class="col">
-          <div class="form-outline">
-            <input type="text" id="form3Example1" class="form-control" name = "age"/>
-            <label class="form-label" for="form3Example1">Age</label>
-          </div>
-        </div>
-        <div class="col">
-          <div class="form-outline">
-            <input type="text" id="form3Example2" class="form-control" name = "position" />
-            <label class="form-label" for="form3Example2">Position</label>
-          </div>
-        </div>
-      </div>
-  
     
+   
   
     <button type="submit" class="btn btn-primary  mb-4">Submit</button>
+    <button type="close" class="btn btn-primary  mb-4">Cancel</button>
+  
   
     
   </form>
